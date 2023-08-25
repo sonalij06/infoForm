@@ -1,4 +1,8 @@
 en: push
+on:
+  push:
+    branches:
+    - '*'
 jobs:
     build-node: 
       containers: node-16
