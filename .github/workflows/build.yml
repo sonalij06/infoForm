@@ -1,7 +1,6 @@
 en: push
 jobs:
     build-node: 
-      runs-on: ubuntu-latest
       containers: node-16
       steps:
           - run: node --version
