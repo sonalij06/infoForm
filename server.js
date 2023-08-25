@@ -16,7 +16,9 @@ try {
     password: 'Sonali@123',
     database: 'web_page'
   });
-
+  connection.on('error', (error) => {
+    console.error('Connection error:', error);
+  });
 
 // Replace 'your_mysql_host', 'your_mysql_user', 'your_mysql_password', and 'your_mysql_database'
 // with your actual MySQL connection details.
