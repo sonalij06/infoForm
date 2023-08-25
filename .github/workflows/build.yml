@@ -1,15 +1,45 @@
-name: default
+# name: default
+# on:
+#   push:
+#     branches:
+#     - '*'
+# jobs:
+#     build-node: 
+#       runs-on: ubuntu-latest
+#       steps:
+#           - run: node --version
+#           - run: npm --version
+#           - uses: actions/checkout@v3
+#           - run:  npm install
+#           - run: npm ci
+#           - run: node server.js
+
+
+name: Node.js App with Local MySQL
 on:
   push:
     branches:
-    - '*'
+      - main
 jobs:
-    build-node: 
-      runs-on: ubuntu-latest
-      steps:
-          - run: node --version
-          - run: npm --version
-          - uses: actions/checkout@v3
-          - run:  npm install
-          - run: npm ci
-          - run: node server.js
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DB_HOST: 127.0.0.1
+      DB_USER: root
+      DB_PASSWORD: Sonali@123
+      DB_NAME: web_page
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Node.js Application
+        run: node server.js
