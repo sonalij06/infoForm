@@ -1,0 +1,11 @@
+en: push
+jobs:
+    build-node: 
+      runs-on: ubuntu-latest
+      containers: node-16
+      steps:
+          - run: node --version
+          - run: npm --version
+          - run: actions/checkout@v3
+          - run:  npm install
+          - run: node server.js
