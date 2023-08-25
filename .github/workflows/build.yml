@@ -9,6 +9,6 @@ jobs:
       steps:
           - run: node --version
           - run: npm --version
-          - run: actions/checkout@v3
+          - run: actions/checkout@v1
           - run:  npm install
           - run: node server.js
