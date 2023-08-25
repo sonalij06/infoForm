@@ -16,9 +16,7 @@ try {
     password: 'Sonali@123',
     database: 'web_page'
   });
-} catch (error) {
-  console.error('Error in MySQL connection:', error);
-}
+
 
 // Replace 'your_mysql_host', 'your_mysql_user', 'your_mysql_password', and 'your_mysql_database'
 // with your actual MySQL connection details.
@@ -58,3 +56,6 @@ const port = 3000; // Choose any available port you prefer
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+} catch (error) {
+  console.error('Error in MySQL connection:', error);
+}
