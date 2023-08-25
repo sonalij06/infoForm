@@ -7,12 +7,18 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // MySQL connection details
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Sonali@123',
-  database: 'web_page'
-});
+
+try {
+  // MySQL connection code here
+  const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Sonali@123',
+    database: 'web_page'
+  });
+} catch (error) {
+  console.error('Error in MySQL connection:', error);
+}
 
 // Replace 'your_mysql_host', 'your_mysql_user', 'your_mysql_password', and 'your_mysql_database'
 // with your actual MySQL connection details.
