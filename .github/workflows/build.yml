@@ -5,7 +5,8 @@ on:
     - '*'
 jobs:
     build-node: 
-      container: node-16
+      runs-on: ubuntu-latest
+      containers: node-16
       steps:
           - run: node --version
           - run: npm --version
